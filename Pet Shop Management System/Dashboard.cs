@@ -25,20 +25,20 @@ namespace Pet_Shop_Management_System
         }
 
         #region method
-        public int extracData(string str)
+        public int extracData(string sql)
         {
             int data = 0;
             try
             {
                 cn.Open();
-                cm = new SqlCommand("SELECT ISNULL(SUM(pqty),0) AS qty FROM tbProduct WHERE pcategory='" + str + "'", cn);
+                cm = new SqlCommand(sql, cn);
                 data = int.Parse(cm.ExecuteScalar().ToString());
                 cn.Close();
             }
-            catch (Exception ex) 
+            catch (Exception ex)
             {
                 cn.Close();
-                MessageBox.Show(ex.Message,title);
+                MessageBox.Show(ex.Message, title);
             }
             return data;
         }
@@ -46,10 +46,10 @@ namespace Pet_Shop_Management_System
 
         private void Dashboard_Load(object sender, EventArgs e)
         {
-            lblDog.Text = extracData("Dog").ToString();
-            lblCat.Text = extracData("Cat").ToString();
-            lblBird.Text = extracData("Bird").ToString();
-            lblFish.Text = extracData("Fish").ToString();
+                lblDog.Text = extracData("SELECT ISNULL(SUM(pqty),0) AS qty FROM tbProduct WHERE pcategory='Dog'").ToString();
+                lblCat.Text = extracData("SELECT ISNULL(SUM(pqty),0) AS qty FROM tbProduct WHERE pcategory='Cat'").ToString();
+                lblBird.Text = extracData("SELECT ISNULL(SUM(pqty),0) AS qty FROM tbProduct WHERE pcategory='Bird'").ToString();
+                lblFish.Text = extracData("SELECT ISNULL(SUM(pqty),0) AS qty FROM tbProduct WHERE pcategory='Fish'").ToString();
         }
     }
 }

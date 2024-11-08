@@ -28,13 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges5 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges6 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges7 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CashProduct));
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges8 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             panel1 = new Panel();
             btnCash = new Guna.UI2.WinForms.Guna2Button();
             txtSearch_ = new Guna.UI2.WinForms.Guna2TextBox();
@@ -66,7 +66,7 @@
             // 
             btnCash.AutoRoundedCorners = true;
             btnCash.BorderRadius = 22;
-            btnCash.CustomizableEdges = customizableEdges5;
+            btnCash.CustomizableEdges = customizableEdges1;
             btnCash.DisabledState.BorderColor = Color.DarkGray;
             btnCash.DisabledState.CustomBorderColor = Color.DarkGray;
             btnCash.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -76,7 +76,7 @@
             btnCash.ForeColor = Color.FromArgb(3, 172, 220);
             btnCash.Location = new Point(599, 24);
             btnCash.Name = "btnCash";
-            btnCash.ShadowDecoration.CustomizableEdges = customizableEdges6;
+            btnCash.ShadowDecoration.CustomizableEdges = customizableEdges2;
             btnCash.Size = new Size(174, 47);
             btnCash.TabIndex = 13;
             btnCash.Text = "Submit";
@@ -87,7 +87,7 @@
             txtSearch_.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             txtSearch_.BackColor = Color.Transparent;
             txtSearch_.BorderRadius = 20;
-            txtSearch_.CustomizableEdges = customizableEdges7;
+            txtSearch_.CustomizableEdges = customizableEdges3;
             txtSearch_.DefaultText = "";
             txtSearch_.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
             txtSearch_.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
@@ -103,7 +103,7 @@
             txtSearch_.PasswordChar = '\0';
             txtSearch_.PlaceholderText = "Search Here";
             txtSearch_.SelectedText = "";
-            txtSearch_.ShadowDecoration.CustomizableEdges = customizableEdges8;
+            txtSearch_.ShadowDecoration.CustomizableEdges = customizableEdges4;
             txtSearch_.Size = new Size(385, 45);
             txtSearch_.TabIndex = 8;
             txtSearch_.TextChanged += txtSearch__TextChanged;
@@ -122,14 +122,14 @@
             dgvProduct.AllowUserToAddRows = false;
             dgvProduct.BackgroundColor = SystemColors.Control;
             dgvProduct.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = Color.FromArgb(3, 172, 220);
-            dataGridViewCellStyle3.Font = new Font("Century Gothic", 10.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle3.ForeColor = Color.White;
-            dataGridViewCellStyle3.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.True;
-            dgvProduct.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = Color.FromArgb(3, 172, 220);
+            dataGridViewCellStyle1.Font = new Font("Century Gothic", 10.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle1.ForeColor = Color.White;
+            dataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
+            dgvProduct.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             dgvProduct.ColumnHeadersHeight = 30;
             dgvProduct.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             dgvProduct.Columns.AddRange(new DataGridViewColumn[] { Column1, Column2, Column3, Column4, Column5, Column7, Select });
@@ -141,6 +141,7 @@
             dgvProduct.RowHeadersWidth = 51;
             dgvProduct.Size = new Size(800, 319);
             dgvProduct.TabIndex = 6;
+            dgvProduct.CellContentClick += dgvProduct_CellContentClick;
             // 
             // Column1
             // 
@@ -184,8 +185,8 @@
             // Column7
             // 
             Column7.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-            dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleRight;
-            Column7.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleRight;
+            Column7.DefaultCellStyle = dataGridViewCellStyle2;
             Column7.HeaderText = "Price";
             Column7.MinimumWidth = 6;
             Column7.Name = "Column7";

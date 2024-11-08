@@ -36,33 +36,7 @@ namespace Pet_Shop_Management_System
             LoadProduct();
         }
 
-        private void dgvProduct_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            string colName = dgvProduct.Columns[e.RowIndex].Name;
-            if(colName == "Edit")
-            {
-                ProductModule module = new ProductModule(this);
-                module.lblPcode.Text = dgvProduct.Rows[e.RowIndex].Cells[1].Value.ToString();
-                module.txtName.Text = dgvProduct.Rows[e.RowIndex].Cells[2].Value.ToString();
-                module.txtType.Text = dgvProduct.Rows[e.RowIndex].Cells[3].Value.ToString();
-                module.cbCategory.Text = dgvProduct.Rows[e.RowIndex].Cells[4].Value.ToString();
-                module.txtQty.Text = dgvProduct.Rows[e.RowIndex].Cells[5].Value.ToString();
-                module.txtPrice.Text = dgvProduct.Rows[e.RowIndex].Cells[6].Value.ToString();
 
-                module.btnSave.Enabled = false; 
-                module.btnUpdate.Enabled = true;
-                module.ShowDialog();
-            }
-            else if(colName == "Delete")
-            {
-                if(MessageBox.Show("Are you sure you want to delete the record?", "Delete record",MessageBoxButtons.YesNo, MessageBoxIcon.Question)==DialogResult.Yes)
-                {
-                    dbcon.executeQuery("DELETE FORM  tbProduct WHERE pcode LIKE '" + dgvProduct.Rows[e.RowIndex].Cells[1].Value.ToString() + "'");  
-                    MessageBox.Show("Item record has been successfully removed!", title, MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                }
-            }
-            LoadProduct();
-        }
         #region Method
 
         public void LoadProduct()
@@ -81,6 +55,34 @@ namespace Pet_Shop_Management_System
             cn.Close();
         }
 
-#endregion Mehtod
+        #endregion Mehtod
+
+        private void dgvProduct_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
+        {
+            string colName = dgvProduct.Columns[e.RowIndex].Name;
+            if (colName == "Edit")
+            {
+                ProductModule module = new ProductModule(this);
+                module.lblPcode.Text = dgvProduct.Rows[e.RowIndex].Cells[1].Value.ToString();
+                module.txtName.Text = dgvProduct.Rows[e.RowIndex].Cells[2].Value.ToString();
+                module.txtType.Text = dgvProduct.Rows[e.RowIndex].Cells[3].Value.ToString();
+                module.cbCategory.Text = dgvProduct.Rows[e.RowIndex].Cells[4].Value.ToString();
+                module.txtQty.Text = dgvProduct.Rows[e.RowIndex].Cells[5].Value.ToString();
+                module.txtPrice.Text = dgvProduct.Rows[e.RowIndex].Cells[6].Value.ToString();
+
+                module.btnSave.Enabled = false;
+                module.btnUpdate.Enabled = true;
+                module.ShowDialog();
+            }
+            else if (colName == "Delete")
+            {
+                if (MessageBox.Show("Are you sure you want to delete the record?", "Delete record", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+                    dbcon.executeQuery("DELETE FORM  tbProduct WHERE pcode LIKE '" + dgvProduct.Rows[e.RowIndex].Cells[1].Value.ToString() + "'");
+                    MessageBox.Show("Item record has been successfully removed!", title, MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+            }
+            LoadProduct();
+        }
     }
 }

@@ -30,29 +30,29 @@ namespace Pet_Shop_Management_System
 
         private void btnCash_Click(object sender, EventArgs e)
         {
-            foreach(DataGridViewRow dr in dgvProduct.Rows)
+            foreach (DataGridViewRow dr in dgvProduct.Rows)
             {
                 bool chkbox = Convert.ToBoolean(dr.Cells["Select"].Value);
-                if(chkbox)
+                if (chkbox)
                 {
                     try
                     {
-                        cm = new SqlCommand("INSERT INTO tbCash(transno, pcode, pname, qty, price, cashier) VALUES(@transno, @pcode, @pname, @qty, @price, @cashier)",cn);
-                        cm.Parameters.AddWithValue("@transno",cash.lblTransno.Text);
+                        cm = new SqlCommand("INSERT INTO tbCash(transno, pcode, pname, qty, price, cashier) VALUES(@transno, @pcode, @pname, @qty, @price, @cashier)", cn);
+                        cm.Parameters.AddWithValue("@transno", cash.lblTransno.Text);
                         cm.Parameters.AddWithValue("@pcode", dr.Cells[1].Value.ToString());
                         cm.Parameters.AddWithValue("@pname", dr.Cells[2].Value.ToString());
-                        cm.Parameters.AddWithValue("@qty",1);
+                        cm.Parameters.AddWithValue("@qty", 1);
                         cm.Parameters.AddWithValue("@price", Convert.ToDouble(dr.Cells[5].Value.ToString()));
-                        cm.Parameters.AddWithValue("@cashier",uname);
+                        cm.Parameters.AddWithValue("@cashier", uname);
 
                         cn.Open();
                         cm.ExecuteNonQuery();
                         cn.Close();
                     }
-                    catch(Exception ex)
+                    catch (Exception ex)
                     {
-                        cn.Close(); 
-                        MessageBox.Show(ex.Message,title);
+                        cn.Close();
+                        MessageBox.Show(ex.Message, title);
                     }
                 }
             }
@@ -71,7 +71,7 @@ namespace Pet_Shop_Management_System
         {
             int i = 0;
             dgvProduct.Rows.Clear();
-            cm = new SqlCommand("SELECT pcode, pname,ptype,pcategory,pprice FROM tbProduct WHERE CONCAT(pname,ptype,pcategory) LIKE '%" + txtSearch_.Text + "%' AND pqty >"+0+"", cn);
+            cm = new SqlCommand("SELECT pcode, pname,ptype,pcategory,pprice FROM tbProduct WHERE CONCAT(pname,ptype,pcategory) LIKE '%" + txtSearch_.Text + "%' AND pqty > " +0+ "", cn);
             cn.Open();
             dr = cm.ExecuteReader();
             while (dr.Read())
@@ -84,5 +84,10 @@ namespace Pet_Shop_Management_System
         }
 
         #endregion Mehtod
+
+        private void dgvProduct_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

@@ -36,7 +36,7 @@ namespace Pet_Shop_Management_System
             string colName = dgvCustomer.Columns[e.ColumnIndex].Name;
             if(colName == "Choice")
             {
-                dbcon.executeQuery("UPDATE tbCash SET id="+ dgvCustomer.Rows[e.RowIndex].Cells[1].Value.ToString() + " WHERE transno=" + cash.lblTransno.Text+ "");
+                dbcon.executeQuery("UPDATE tbCash SET cid="+ dgvCustomer.Rows[e.RowIndex].Cells[1].Value.ToString() + " WHERE transno=" + cash.lblTransno.Text+ "");
                 cash.loandCash();
                 this.Dispose();
             }

@@ -44,16 +44,16 @@
             label2 = new Label();
             guna2GradientPanel2 = new Guna.UI2.WinForms.Guna2GradientPanel();
             pictureBox2 = new PictureBox();
-            label4 = new Label();
             lblCat = new Label();
+            lbl = new Label();
             guna2GradientPanel3 = new Guna.UI2.WinForms.Guna2GradientPanel();
             pictureBox3 = new PictureBox();
-            label6 = new Label();
             lblFish = new Label();
+            lbl6 = new Label();
             guna2GradientPanel4 = new Guna.UI2.WinForms.Guna2GradientPanel();
             pictureBox4 = new PictureBox();
-            label8 = new Label();
             lblBird = new Label();
+            lbl5 = new Label();
             guna2GradientPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             guna2GradientPanel2.SuspendLayout();
@@ -126,8 +126,8 @@
             // guna2GradientPanel2
             // 
             guna2GradientPanel2.Controls.Add(pictureBox2);
-            guna2GradientPanel2.Controls.Add(label4);
             guna2GradientPanel2.Controls.Add(lblCat);
+            guna2GradientPanel2.Controls.Add(lbl);
             guna2GradientPanel2.CustomizableEdges = customizableEdges3;
             guna2GradientPanel2.FillColor = Color.FromArgb(13, 111, 221);
             guna2GradientPanel2.FillColor2 = Color.FromArgb(3, 172, 220);
@@ -148,35 +148,35 @@
             pictureBox2.TabIndex = 2;
             pictureBox2.TabStop = false;
             // 
-            // label4
-            // 
-            label4.BackColor = Color.Transparent;
-            label4.Font = new Font("Century Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label4.ForeColor = Color.White;
-            label4.Location = new Point(165, 72);
-            label4.Name = "label4";
-            label4.Size = new Size(64, 22);
-            label4.TabIndex = 3;
-            label4.Text = "0";
-            label4.TextAlign = ContentAlignment.MiddleRight;
-            // 
             // lblCat
             // 
-            lblCat.AutoSize = true;
             lblCat.BackColor = Color.Transparent;
-            lblCat.Font = new Font("Harlow Solid Italic", 10.8F, FontStyle.Bold | FontStyle.Italic);
+            lblCat.Font = new Font("Century Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblCat.ForeColor = Color.White;
-            lblCat.Location = new Point(165, 20);
+            lblCat.Location = new Point(165, 72);
             lblCat.Name = "lblCat";
-            lblCat.Size = new Size(43, 23);
-            lblCat.TabIndex = 2;
-            lblCat.Text = "Cats";
+            lblCat.Size = new Size(64, 22);
+            lblCat.TabIndex = 3;
+            lblCat.Text = "0";
+            lblCat.TextAlign = ContentAlignment.MiddleRight;
+            // 
+            // lbl
+            // 
+            lbl.AutoSize = true;
+            lbl.BackColor = Color.Transparent;
+            lbl.Font = new Font("Harlow Solid Italic", 10.8F, FontStyle.Bold | FontStyle.Italic);
+            lbl.ForeColor = Color.White;
+            lbl.Location = new Point(165, 20);
+            lbl.Name = "lbl";
+            lbl.Size = new Size(43, 23);
+            lbl.TabIndex = 2;
+            lbl.Text = "Cats";
             // 
             // guna2GradientPanel3
             // 
             guna2GradientPanel3.Controls.Add(pictureBox3);
-            guna2GradientPanel3.Controls.Add(label6);
             guna2GradientPanel3.Controls.Add(lblFish);
+            guna2GradientPanel3.Controls.Add(lbl6);
             guna2GradientPanel3.CustomizableEdges = customizableEdges5;
             guna2GradientPanel3.FillColor = Color.FromArgb(13, 111, 221);
             guna2GradientPanel3.FillColor2 = Color.FromArgb(3, 172, 220);
@@ -196,35 +196,35 @@
             pictureBox3.TabIndex = 2;
             pictureBox3.TabStop = false;
             // 
-            // label6
-            // 
-            label6.BackColor = Color.Transparent;
-            label6.Font = new Font("Century Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label6.ForeColor = Color.White;
-            label6.Location = new Point(165, 72);
-            label6.Name = "label6";
-            label6.Size = new Size(64, 22);
-            label6.TabIndex = 3;
-            label6.Text = "0";
-            label6.TextAlign = ContentAlignment.MiddleRight;
-            // 
             // lblFish
             // 
-            lblFish.AutoSize = true;
             lblFish.BackColor = Color.Transparent;
-            lblFish.Font = new Font("Harlow Solid Italic", 10.8F, FontStyle.Bold | FontStyle.Italic);
+            lblFish.Font = new Font("Century Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblFish.ForeColor = Color.White;
-            lblFish.Location = new Point(165, 20);
+            lblFish.Location = new Point(165, 72);
             lblFish.Name = "lblFish";
-            lblFish.Size = new Size(49, 23);
-            lblFish.TabIndex = 2;
-            lblFish.Text = "Fish";
+            lblFish.Size = new Size(64, 22);
+            lblFish.TabIndex = 3;
+            lblFish.Text = "0";
+            lblFish.TextAlign = ContentAlignment.MiddleRight;
+            // 
+            // lbl6
+            // 
+            lbl6.AutoSize = true;
+            lbl6.BackColor = Color.Transparent;
+            lbl6.Font = new Font("Harlow Solid Italic", 10.8F, FontStyle.Bold | FontStyle.Italic);
+            lbl6.ForeColor = Color.White;
+            lbl6.Location = new Point(165, 20);
+            lbl6.Name = "lbl6";
+            lbl6.Size = new Size(49, 23);
+            lbl6.TabIndex = 2;
+            lbl6.Text = "Fish";
             // 
             // guna2GradientPanel4
             // 
             guna2GradientPanel4.Controls.Add(pictureBox4);
-            guna2GradientPanel4.Controls.Add(label8);
             guna2GradientPanel4.Controls.Add(lblBird);
+            guna2GradientPanel4.Controls.Add(lbl5);
             guna2GradientPanel4.CustomizableEdges = customizableEdges7;
             guna2GradientPanel4.FillColor = Color.FromArgb(13, 111, 221);
             guna2GradientPanel4.FillColor2 = Color.FromArgb(3, 172, 220);
@@ -244,29 +244,29 @@
             pictureBox4.TabIndex = 2;
             pictureBox4.TabStop = false;
             // 
-            // label8
-            // 
-            label8.BackColor = Color.Transparent;
-            label8.Font = new Font("Century Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label8.ForeColor = Color.White;
-            label8.Location = new Point(165, 72);
-            label8.Name = "label8";
-            label8.Size = new Size(64, 22);
-            label8.TabIndex = 3;
-            label8.Text = "0";
-            label8.TextAlign = ContentAlignment.MiddleRight;
-            // 
             // lblBird
             // 
-            lblBird.AutoSize = true;
             lblBird.BackColor = Color.Transparent;
-            lblBird.Font = new Font("Harlow Solid Italic", 10.8F, FontStyle.Bold | FontStyle.Italic);
+            lblBird.Font = new Font("Century Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblBird.ForeColor = Color.White;
-            lblBird.Location = new Point(165, 20);
+            lblBird.Location = new Point(165, 72);
             lblBird.Name = "lblBird";
-            lblBird.Size = new Size(57, 23);
-            lblBird.TabIndex = 2;
-            lblBird.Text = "Birds";
+            lblBird.Size = new Size(64, 22);
+            lblBird.TabIndex = 3;
+            lblBird.Text = "0";
+            lblBird.TextAlign = ContentAlignment.MiddleRight;
+            // 
+            // lbl5
+            // 
+            lbl5.AutoSize = true;
+            lbl5.BackColor = Color.Transparent;
+            lbl5.Font = new Font("Harlow Solid Italic", 10.8F, FontStyle.Bold | FontStyle.Italic);
+            lbl5.ForeColor = Color.White;
+            lbl5.Location = new Point(165, 20);
+            lbl5.Name = "lbl5";
+            lbl5.Size = new Size(57, 23);
+            lbl5.TabIndex = 2;
+            lbl5.Text = "Birds";
             // 
             // Dashboard
             // 
@@ -281,6 +281,7 @@
             FormBorderStyle = FormBorderStyle.None;
             Name = "Dashboard";
             Text = "Dashboard";
+            Load += Dashboard_Load;
             guna2GradientPanel1.ResumeLayout(false);
             guna2GradientPanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
@@ -306,15 +307,15 @@
         private PictureBox pictureBox1;
         private Guna.UI2.WinForms.Guna2GradientPanel guna2GradientPanel2;
         private PictureBox pictureBox2;
-        private Label label4;
         private Label lblCat;
+        private Label lbl;
         private Guna.UI2.WinForms.Guna2GradientPanel guna2GradientPanel3;
         private PictureBox pictureBox3;
-        private Label label6;
         private Label lblFish;
+        private Label lbl6;
         private Guna.UI2.WinForms.Guna2GradientPanel guna2GradientPanel4;
         private PictureBox pictureBox4;
-        private Label label8;
         private Label lblBird;
+        private Label lbl5;
     }
 }
