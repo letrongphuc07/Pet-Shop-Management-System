@@ -71,7 +71,7 @@ namespace Pet_Shop_Management_System
         {
             int i = 0;
             dgvUser.Rows.Clear();
-            cm = new SqlCommand("SELECT * FROM tbUser WHERE CONCAT(name,address,phone,dob,role) LIKE '%" + txtSearch.Text + "'", cn);
+            cm = new SqlCommand("SELECT * FROM tbUser WHERE CONCAT(name,address,phone,dob,role) LIKE '%" + txtSearch.Text + "%'", cn);
             cn.Open();
             dr = cm.ExecuteReader();
             while (dr.Read())

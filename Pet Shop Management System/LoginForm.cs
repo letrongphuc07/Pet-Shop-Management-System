@@ -53,7 +53,7 @@ namespace Pet_Shop_Management_System
                     MainForm main = new MainForm();
                     main.lblUsername.Text = _name;
                     main.lblRole.Text = _role;
-                    if (_role=="Administrator")           
+                    if (_role== "Administrator")           
                         main.btnUser.Enabled = true;    
                     this.Hide();
                     main.ShowDialog();

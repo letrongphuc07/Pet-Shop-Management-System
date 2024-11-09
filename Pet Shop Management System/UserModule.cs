@@ -27,42 +27,6 @@ namespace Pet_Shop_Management_System
             userForm = user;
             cbRole.SelectedIndex = 1;
         }
-
-        private void btnSave_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                CheckField();
-                if(check)
-                {
-                    if (MessageBox.Show("Are you sure you want to register this user?", "User Registration", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
-                    {
-                        cm = new SqlCommand("INSERT INTO tbUser(name,address,phone,role,dob,password)VALUES(@name,@address,@phone,@role,@dob,@password)", cn);
-                        cm.Parameters.AddWithValue("@name", txtName.Text);
-                        cm.Parameters.AddWithValue("@address", txtAddress.Text);
-                        cm.Parameters.AddWithValue("@phone", txtPhone.Text);
-                        cm.Parameters.AddWithValue("@role", cbRole.Text);
-                        cm.Parameters.AddWithValue("@dob", dtDob.Value);
-                        cm.Parameters.AddWithValue("@password", txtPass.Text);
-
-                        cn.Open();
-                        cm.ExecuteNonQuery();
-                        cn.Close();
-                        MessageBox.Show("User has been successfully registered!", title);
-                        Clear();
-                        userForm.LoadUser();
-                    }
-                }
-
-            }
-            catch (Exception ex)
-            {
-                cn.Close();
-                MessageBox.Show(ex.Message, title);
-            }
-
-        }
-
         private void btnUpdate_Click(object sender, EventArgs e)
         {
 
@@ -73,7 +37,7 @@ namespace Pet_Shop_Management_System
                 {
                     if (MessageBox.Show("Are you sure you want to update this record?", "Edit record", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                     {
-                        cm = new SqlCommand("UPDATE tbUser SET name=@name,address=@address,phone=@phone,role=@role,dob=@dob,password@password WHERE id=@id", cn);
+                        cm = new SqlCommand("UPDATE tbUser SET name=@name, address=@address, phone=@phone, role=@role, dob=@dob, password=@password WHERE id=@id", cn);
                         cm.Parameters.AddWithValue("@id", lbluid.Text);
                         cm.Parameters.AddWithValue("@name", txtName.Text);
                         cm.Parameters.AddWithValue("@address", txtAddress.Text);
@@ -170,6 +134,40 @@ namespace Pet_Shop_Management_System
         private void UserModule_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnSave_Click_1(object sender, EventArgs e)
+        {
+            try
+            {
+                CheckField();
+                if (check)
+                {
+                    if (MessageBox.Show("Are you sure you want to register this user?", "User Registration", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                    {
+                        cm = new SqlCommand("INSERT INTO tbUser(name,address,phone,role,dob,password)VALUES(@name,@address,@phone,@role,@dob,@password)", cn);
+                        cm.Parameters.AddWithValue("@name", txtName.Text);
+                        cm.Parameters.AddWithValue("@address", txtAddress.Text);
+                        cm.Parameters.AddWithValue("@phone", txtPhone.Text);
+                        cm.Parameters.AddWithValue("@role", cbRole.Text);
+                        cm.Parameters.AddWithValue("@dob", dtDob.Value);
+                        cm.Parameters.AddWithValue("@password", txtPass.Text);
+
+                        cn.Open();
+                        cm.ExecuteNonQuery();
+                        cn.Close();
+                        MessageBox.Show("User has been successfully registered!", title);
+                        Clear();
+                        userForm.LoadUser();
+                    }
+                }
+
+            }
+            catch (Exception ex)
+            {
+                cn.Close();
+                MessageBox.Show(ex.Message, title);
+            }
         }
     }
 }
