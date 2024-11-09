@@ -33,7 +33,7 @@ namespace Pet_Shop_Management_System
             try
             {
                 CheckField();
-                if (check)
+                if(check)
                 {
                     if (MessageBox.Show("Are you sure you want to register this user?", "User Registration", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                     {

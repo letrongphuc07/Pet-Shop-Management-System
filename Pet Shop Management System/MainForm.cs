@@ -16,7 +16,6 @@ namespace Pet_Shop_Management_System
         SqlConnection cn = new SqlConnection();
         SqlCommand cm = new SqlCommand();
         DbConnect dbcon = new DbConnect();
-        SqlDataReader dr;
         public MainForm()
         {
             InitializeComponent();
@@ -86,7 +85,7 @@ namespace Pet_Shop_Management_System
             });
         }
         #region Method
-        private Form activeForm = null;
+        private Form activeForm = null!;
         public void openChildForm(Form childForm)
         {
             if (activeForm != null)

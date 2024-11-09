@@ -26,17 +26,12 @@ namespace Pet_Shop_Management_System
             product = form;
             cbCategory.SelectedIndex = 0;
         }
-
-        public ProductModule()
-        {
-        }
-
         private void btnClose_Click(object sender, EventArgs e)
         {
             this.Dispose();
         }
 
-       
+
         private void txtQty_KeyPress(object sender, KeyPressEventArgs e)
         {
             //số nguyên
@@ -59,7 +54,72 @@ namespace Pet_Shop_Management_System
                 e.Handled = true;
             }
         }
+        private void btnUpdate_Click(object sender, EventArgs e)
+        {
+            {
+                try
+                {
+                    CheckField();
+                    if (check)
+                    {
+                        if (MessageBox.Show("Are you sure you want to Edit this product?", "Product Edited", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                        {
+                            cm = new SqlCommand("UPDATE tbProduct SET pname=@pname,ptype=@ptype,pcategory=@pcategory,pqty=@pqty,pprice=@pprice WHERE pcode=@pcode", cn);
+                            cm.Parameters.AddWithValue("@pcode", lblPcode.Text);
+                            cm.Parameters.AddWithValue("@pname", txtName.Text);
+                            cm.Parameters.AddWithValue("@ptype", txtType.Text);
+                            cm.Parameters.AddWithValue("@pcategory", cbCategory.Text);
+                            cm.Parameters.AddWithValue("@pqty", int.Parse(txtQty.Text));
+                            cm.Parameters.AddWithValue("@pprice", double.Parse(txtPrice.Text));
 
+                            cn.Open();
+                            cm.ExecuteNonQuery();
+                            cn.Close();
+                            MessageBox.Show("Product has been successfully updated!", title);
+                            Clear();
+                            product.LoadProduct();
+                            this.Dispose();
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message, title);
+                }
+            }
+        }
+
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                CheckField();
+                if (check)
+                {
+                    if (MessageBox.Show("Are you sure you want to register this product?", "Product Registration", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                    {
+                        cm = new SqlCommand("INSERT INTO tbProduct(pname,ptype,pcategory,pqty,pprice)VALUES(@pname,@ptype,@pcategory,@pqty,@pprice)", cn);
+                        cm.Parameters.AddWithValue("@pname", txtName.Text);
+                        cm.Parameters.AddWithValue("@ptype", txtType.Text);
+                        cm.Parameters.AddWithValue("@pcategory", cbCategory.Text);
+                        cm.Parameters.AddWithValue("@pqty", int.Parse(txtQty.Text));
+                        cm.Parameters.AddWithValue("@pprice", double.Parse(txtPrice.Text));
+
+                        cn.Open();
+                        cm.ExecuteNonQuery();
+                        cn.Close();
+                        MessageBox.Show("Product has been successfully registered!", title);
+                        Clear();
+                        product.LoadProduct();
+
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, title);
+            }
+        }
         #region Method
         public void Clear()
         {
@@ -84,76 +144,7 @@ namespace Pet_Shop_Management_System
         }
         #endregion Method
 
-        private void ProductModule_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnSave_Click_1(object sender, EventArgs e)
-        {
-            try
-            {
-                CheckField();
-                if (check)
-                {
-                    if (MessageBox.Show("Are you sure you want to register this product?", "Product Registration", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
-                    {
-                        cm = new SqlCommand("INSERT INTO tbProduct(pname,ptype,pcategory,pqty,pprice)VALUES(@pname,@ptype,@pcategory,@pqty,@pprice)", cn);
-                        cm.Parameters.AddWithValue("@pname", txtName.Text);
-                        cm.Parameters.AddWithValue("@ptype", txtType.Text);
-                        cm.Parameters.AddWithValue("@pcategory", cbCategory.Text);
-                        cm.Parameters.AddWithValue("@pqty", int.Parse(txtQty.Text));
-                        cm.Parameters.AddWithValue("@pprice", double.Parse(txtPrice.Text));
-
-                        cn.Open();
-                        cm.ExecuteNonQuery();
-                        cn.Close();
-                        MessageBox.Show("Product has been successfully registered!", title);
-                        Clear();
-                        product.LoadProduct();
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message, title);
-            }
-        }
-
-        private void btnUpdate_Click_1(object sender, EventArgs e)
-        {
-            try
-            {
-                CheckField();
-                if (check)
-                {
-                    if (MessageBox.Show("Are you sure you want to Edit this product?", "Product Edited", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
-                    {
-                        cm = new SqlCommand("UPDATE tbProduct SET pname=@pname,ptype=@ptype,pcategory=@pcategory,pqty=@pqty,pprice=@pprice WHERE pcode=@pcode", cn);
-                        cm.Parameters.AddWithValue("@pcode", lblPcode.Text);
-                        cm.Parameters.AddWithValue("@pname", txtName.Text);
-                        cm.Parameters.AddWithValue("@ptype", txtType.Text);
-                        cm.Parameters.AddWithValue("@pcategory", cbCategory.Text);
-                        cm.Parameters.AddWithValue("@pqty", int.Parse(txtQty.Text));
-                        cm.Parameters.AddWithValue("@pprice", double.Parse(txtPrice.Text));
-
-                        cn.Open();
-                        cm.ExecuteNonQuery();
-                        cn.Close();
-                        MessageBox.Show("Product has been successfully updated!", title);
-                        Clear();
-                        product.LoadProduct();
-                        this.Dispose();
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message, title);
-            }
-        }
-
-        private void btnCancel_Click_1(object sender, EventArgs e)
+        private void btnCancel_Click(object sender, EventArgs e)
         {
             Clear();
         }

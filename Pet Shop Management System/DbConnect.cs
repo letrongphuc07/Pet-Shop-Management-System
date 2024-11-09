@@ -14,7 +14,7 @@ namespace Pet_Shop_Management_System
         private string con;
         public DbConnect()
         {
-            con= @"Data Source=DESKTOP-37BI0EK\SQLEXPRESS;Initial Catalog=dbPetShop;Integrated Security=True;Connect Timeout=30";
+            con= @"Data Source=DESKTOP-37BI0EK\SQLEXPRESS;Initial Catalog=dbPetShop;Integrated Security=True;Connect Timeout=40";
         }   
         public string connection()
         {

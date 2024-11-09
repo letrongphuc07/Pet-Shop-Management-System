@@ -245,9 +245,6 @@
         private Panel panel2;
         private Guna.UI2.WinForms.Guna2TextBox txtSearch;
         private Guna.UI2.WinForms.Guna2Button btnAdd;
-        private DataGridViewTextBoxColumn Column8;
-        private DataGridViewTextBoxColumn Column7;
-        private DataGridViewTextBoxColumn Column6;
         private DataGridView dgvUser;
         private DataGridViewTextBoxColumn Column1;
         private DataGridViewTextBoxColumn Column2;

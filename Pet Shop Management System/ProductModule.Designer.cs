@@ -86,7 +86,7 @@
             btnCancel.TabIndex = 7;
             btnCancel.Text = "Cancel";
             btnCancel.UseVisualStyleBackColor = false;
-            btnCancel.Click += btnCancel_Click_1;
+            btnCancel.Click += btnCancel_Click;
             // 
             // btnUpdate
             // 
@@ -102,7 +102,7 @@
             btnUpdate.TabIndex = 6;
             btnUpdate.Text = "Update";
             btnUpdate.UseVisualStyleBackColor = false;
-            btnUpdate.Click += btnUpdate_Click_1;
+            btnUpdate.Click += btnUpdate_Click;
             // 
             // btnSave
             // 
@@ -117,7 +117,7 @@
             btnSave.TabIndex = 5;
             btnSave.Text = "Save";
             btnSave.UseVisualStyleBackColor = false;
-            btnSave.Click += btnSave_Click_1;
+            btnSave.Click += btnSave_Click;
             // 
             // cbCategory
             // 
@@ -265,7 +265,6 @@
             Name = "ProductModule";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "ProductModule";
-            Load += ProductModule_Load;
             ResumeLayout(false);
             PerformLayout();
         }

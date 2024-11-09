@@ -16,7 +16,6 @@ namespace Pet_Shop_Management_System
         SqlConnection cn = new SqlConnection();
         SqlCommand cm = new SqlCommand();
         DbConnect dbcon = new DbConnect();
-        SqlDataReader dr;
         string title = "Pet Shop Management System";
         public Dashboard()
         {
